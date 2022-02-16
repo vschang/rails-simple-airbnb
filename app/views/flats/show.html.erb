@@ -1,20 +1,25 @@
 <div class='container'>
-<h1><%= @flat.name %></h1>
-<h3><%= @flat.address %></h3>
+  <h1><%= @flat.name %></h1>
+  <h3><%= @flat.address %></h3>
 </div>
 <div class='container'>
-<h2>A little more about this flat...</h2>
-<p><%= @flat.description %></p>
+  <img src= <%="#{@flat.url}"%> width="600" height="400">
 </div>
 <div class='container'>
-<h2>Details</h2>
-<p><i class="fa-solid fa-money-bill-1-wave"></i><%= @flat.price_per_night %></p>
-<p><i class="fa-solid fa-baby"></i><%= @flat.number_of_guests %></p>
+  <h2>A little more about this flat...</h2>
+  <p><%= @flat.description %></p>
 </div>
 <div class='container'>
-<h3><strong>Book this flat!</h3></strong>
+  <h2>Details</h2>
+  <p><i class="fa-solid fa-money-bill-1-wave"></i><%= @flat.price_per_night %></p>
+  <p><i class="fa-solid fa-baby"></i><%= @flat.number_of_guests %></p>
 </div>
 <div class='container'>
-<p><strong>Share</strong></p>
+  <h3><strong>Book this flat!</h3></strong>
 </div>
+<div class='container'>
+  <p><strong>Share</strong></p>
+</div>
+<div class='container'>
 <%= link_to "Back", flats_path%>
+</div>

@@ -1,18 +1,40 @@
-<h1>All Flats</h2>
-<ul>
-  <% @flats.each do |flat| %>
-    <h2><%= link_to flat.name, flat_path(flat) %></h2>
-    <p><%= flat.address %></p>
-    <p><%= flat.description %></p>
-    <p><i class="fa-solid fa-money-bill-1-wave"></i><%= flat.price_per_night %></p>
-    <p><i class="fa-solid fa-baby"></i><%= flat.number_of_guests %></p>
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1"><%= link_to "FartBnb", flats_path %></span>
+</nav>
+<h2>Our available properties:</h2>
 
-  <%= link_to "More Info", flat_path(flat) %>
-  <%= link_to "Edit", edit_flat_path(flat) %>
-  <%= link_to "Belongs in the Trash",
-            flat_path(flat),
-            method: :destroy,
-            data: { confirm: "Are you sure?" } %>
-  <% end %>
-</ul>
+<div class='container'>
+  <% @flats.each do |flat| %>
+  <div class="row">
+    <div class="col-xs-12
+                col-sm-8
+                col-md-6
+                col-lg-3">
+      <div class="box">
+  <div class='card' style="width: 400px">
+    <img class="card-img-top" src= <%="#{flat.url}"%> width="400" height="300">
+    <div class="card-body">
+      <h2><%= flat.name %></h2>
+      <p class="card-title"><%= flat.address %></p>
+      <p class="card-text"><%= flat.description %></p>
+      <p class="card-text"><i class="fa-solid fa-money-bill-1-wave"></i><%= flat.price_per_night %>
+      <i class="fa-solid fa-baby"></i><%= flat.number_of_guests %></p>
+    <div class="card-footer text-muted">
+    <%= link_to "More Info", flat_path(flat) %>
+    <%= link_to "Edit", edit_flat_path(flat) %>
+    <%= link_to "Traaash",
+                          flat_path(flat),
+                          method: :delete,
+                          data: { confirm: "Are you sure?" } %>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+<div class='container'>
 <%= link_to "Add Flat", new_flat_path(@flat) %>
+</div>

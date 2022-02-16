@@ -4,12 +4,15 @@
   <%= f.text_field :name %>
   <%= f.label :address %>
   <%= f.text_field :address %>
+  <%= f.label "Picture URL" %>
+  <%= f.text_field :url %>
   <%= f.label :description %>
   <%= f.text_field :description %>
   <%= f.label :number_of_guests %>
   <%= f.number_field :number_of_guests %>
   <%= f.label :price_per_night %>
   <%= f.number_field :price_per_night %>
-  <%= f.submit %>
+  <%= f.submit "Update flat" %>
+  
 <% end %>
 <%= link_to "Back", flats_path%>
