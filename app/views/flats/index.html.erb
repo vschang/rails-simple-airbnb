@@ -1,0 +1,18 @@
+<h1>All Flats</h2>
+<ul>
+  <% @flats.each do |flat| %>
+    <h2><%= link_to flat.name, flat_path(flat) %></h2>
+    <p><%= flat.address %></p>
+    <p><%= flat.description %></p>
+    <p><i class="fa-solid fa-money-bill-1-wave"></i><%= flat.price_per_night %></p>
+    <p><i class="fa-solid fa-baby"></i><%= flat.number_of_guests %></p>
+
+  <%= link_to "More Info", flat_path(flat) %>
+  <%= link_to "Edit", edit_flat_path(flat) %>
+  <%= link_to "Belongs in the Trash",
+            flat_path(flat),
+            method: :destroy,
+            data: { confirm: "Are you sure?" } %>
+  <% end %>
+</ul>
+<%= link_to "Add Flat", new_flat_path(@flat) %>
